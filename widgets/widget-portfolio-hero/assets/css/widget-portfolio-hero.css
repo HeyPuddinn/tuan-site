@@ -1,0 +1,143 @@
+.portfolio-hero-widget {
+    background-color: #0a0a13;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-hero-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    padding-top: 60px;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.portfolio-hero-welcome {
+    font-size: 48px;
+    color: #ffffff;
+    transition: opacity 0.1s ease, transform 0.1s ease;
+    will-change: opacity, transform;
+}
+
+.portfolio-text-container {
+    position: relative;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.portfolio-text {
+    font-size: 72px;
+    font-weight: bold;
+    color: #ffffff; 
+    transition: opacity 0.1s ease, transform 0.1s ease;
+    will-change: opacity, transform;
+    line-height: 0.8;
+}
+
+.portfolio-hero-avatar {
+    flex: 0 0 400px;
+    position: relative;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: absolute;
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    box-shadow: none;
+}
+
+.portfolio-hero-avatar img {
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Animation classes */
+[data-scroll].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (min-width: 1700px) {
+  .text-content {
+    margin-top: 5vh;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .portfolio-hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .portfolio-hero-welcome {
+        font-size: 36px;
+    }
+
+    .portfolio-text {
+        font-size: 56px;
+    }
+
+    .portfolio-hero-avatar {
+        flex: 0 0 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio-hero-welcome {
+        font-size: 28px;
+    }
+
+    .portfolio-text {
+        font-size: 42px;
+    }
+
+    .portfolio-hero-avatar {
+        flex: 0 0 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .portfolio-hero-welcome {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .portfolio-text {
+        font-size: 32px;
+    }
+
+    .portfolio-hero-content {
+      padding-top: 16vh;
+    }
+
+
+    .portfolio-hero-avatar {
+        flex: 0 0 200px;
+        top: 32vh;
+        img {
+          width: 100%;
+        }
+    }
+} 
