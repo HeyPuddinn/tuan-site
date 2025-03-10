@@ -1,0 +1,110 @@
+.about-me-widget {
+    background-color: #0a0a13;
+    padding: 50px 20px 0;
+    color: #ffffff;
+    height: 100vh;
+}
+
+.about-me-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0px 0;
+}
+
+.about-me-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+    position: relative;
+    font-size: 35px;
+}
+
+.about-me-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-me-image {
+    display: none; /* Hide image as it's not shown in the reference */
+}
+
+.about-me-content {
+    color: #626262; /* Initial color for text */
+    line-height: 1.6;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+/* Pin element for early animation trigger */
+.pin-element {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin-bottom: 100px; /* Adjust this value to control how early the animation starts */
+    visibility: hidden;
+}
+
+.about-me-content p {
+    margin-bottom: 15px;
+}
+
+.about-me-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Styles for the character-based animation */
+.about-me-word {
+    display: inline-block;
+    position: relative;
+}
+
+.about-me-char {
+    display: inline-block;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.about-me-space {
+    display: inline-block;
+    width: 0.25em;
+}
+
+/* Style for completed words */
+.about-me-word.word-complete {
+    /* Optional styling for completed words */
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+}
+
+/* Fix for line breaks */
+.about-me-content br {
+    display: none; /* Hide br tags to prevent unwanted line breaks */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .about-me-title {
+        font-size: 28px;
+    }
+    
+    .about-me-content {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-me-widget {
+        padding: 20px 15px;
+    }
+    
+    .about-me-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+} 
