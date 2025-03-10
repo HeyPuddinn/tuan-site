@@ -18,7 +18,7 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 final class Hello_Elementor_Widgets {
     // Plugin version
-    const VERSION = '1.0.0';
+    const VERSION = '1.1.1';
     const MINIMUM_ELEMENTOR_VERSION = '3.0.0';
 
     // Plugin instance
