@@ -3,7 +3,7 @@
  * Plugin Name: Hello Elementor Custom Widgets
  * Description: Custom Elementor widgets collection
  * Plugin URI:  https://github.com/HeyPuddinn/tuan-site
- * Version:     1.0.0
+ * Version:     1.1.1
  * Author:      HeyPuddinn
  * Author URI:  https://github.com/HeyPuddinn
  * Text Domain: hello-elementor-widgets
@@ -41,7 +41,7 @@ final class Hello_Elementor_Widgets {
 
     private function setup_auto_update() {
         $updateChecker = PucFactory::buildUpdateChecker(
-            'https://github.com/HeyPuddinn/tuan-site',
+            'https://api.github.com/repos/HeyPuddinn/tuan-site/releases',
             __FILE__,
             'hello-elementor-widgets'
         );
