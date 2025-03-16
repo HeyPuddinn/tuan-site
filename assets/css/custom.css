@@ -1,0 +1,14 @@
+.custom-widget-section {
+  position: sticky !important;
+  top: 0;
+  z-index: 10 !important;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
+  transition: box-shadow 0.3s ease !important;
+}
+
+/* Thêm một chút padding và background để tạo cảm giác phân tách tốt hơn */
+.custom-widget-section {
+  background-color: rgba(30, 30, 30, 0.5);
+  padding: 1px;
+  border-radius: 2px;
+}

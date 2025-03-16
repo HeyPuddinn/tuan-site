@@ -1,8 +1,8 @@
 .about-me-widget {
-    background-color: #0a0a13;
+    background-color: #141414;
     padding: 50px 20px 0;
     color: #ffffff;
-    height: 100vh;
+    height: 250vh;
 }
 
 .about-me-container {
@@ -12,15 +12,18 @@
   top: 50%;
   transform: translateY(-50%);
   padding: 0px 0;
+  display: flex;
+  column-gap: 74px;
 }
 
 .about-me-title {
     font-size: 36px;
     font-weight: bold;
-    color: #ffffff;
+    color: #87715D;
     margin-bottom: 30px;
     position: relative;
     font-size: 35px;
+    min-width: 220px;
 }
 
 .about-me-content-wrapper {

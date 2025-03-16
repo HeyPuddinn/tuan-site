@@ -1,5 +1,5 @@
 .portfolio-hero-widget {
-    background-color: #0a0a13;
+    background-color: #141414;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -26,6 +26,25 @@
     flex: 1;
 }
 
+.wrapper-welcome {
+    position: relative;
+}
+
+.wrapper-welcome .first {
+    color: transparent !important;
+    -webkit-text-stroke: 2px #87715D;
+}
+
+.wrapper-welcome .second {
+    color: #87715D !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke: 2px #87715D;
+    animation: waves 4s ease-in-out infinite;
+    padding-bottom: 3px;
+}
+
 .portfolio-hero-welcome {
     font-size: 48px;
     color: #ffffff;
@@ -37,6 +56,7 @@
     position: relative;
     text-align: center;
     margin-top: 60px;
+    pointer-events: none;
 }
 
 .portfolio-text {
@@ -46,6 +66,11 @@
     transition: opacity 0.1s ease, transform 0.1s ease;
     will-change: opacity, transform;
     line-height: 0.8;
+}
+
+.portfolio-text:nth-child(odd) {
+    -webkit-text-stroke: 3px #87715D;
+    -webkit-text-fill-color: #141414;
 }
 
 .portfolio-hero-avatar {
@@ -59,6 +84,7 @@
     text-align: center;
     left: 0;
     box-shadow: none;
+    pointer-events: none;
 }
 
 .portfolio-hero-avatar img {
@@ -141,3 +167,34 @@
         }
     }
 } 
+
+@keyframes waves {
+    0%,
+       100% {
+           clip-path: polygon(
+               0% 45%,
+               16% 44%,
+               33% 50%,
+               54% 60%,
+               70% 61%,
+               84% 59%,
+               100% 52%,
+               100% 100%,
+               0% 100%
+           );
+       }
+   
+       50% {
+           clip-path: polygon(
+               0% 60%,
+               15% 65%,
+               34% 66%,
+               51% 62%,
+               67% 50%,
+               84% 45%,
+               100% 46%,
+               100% 100%,
+               0% 100%
+           );
+       } 
+   }

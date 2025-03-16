@@ -4,7 +4,10 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 <div class="portfolio-hero-widget">
     <div class="portfolio-hero-content">
-        <h1 class="portfolio-hero-welcome" data-scroll><?php echo esc_html($settings['welcome_text']); ?></h1>
+        <div class="wrapper-welcome">
+            <h1 class="portfolio-hero-welcome first" data-scroll><?php echo esc_html($settings['welcome_text']); ?></h1>
+            <h1 class="portfolio-hero-welcome second" data-scroll><?php echo esc_html($settings['welcome_text']); ?></h1>
+        </div>
         <div class="text-content">
             <div class="portfolio-text-container">
                 <?php for($i = 0; $i < 4; $i++): ?>
