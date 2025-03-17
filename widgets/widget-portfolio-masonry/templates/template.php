@@ -27,6 +27,9 @@ if (!empty($settings['gallery_posts'])) {
 <div class="portfolio-masonry-container">
     <div class="tabs-container">
         <div class="tabs-wrapper" id="stickyTabs">
+            <?php if (!empty($settings['widget_title'])) : ?>
+                <h2 class="widget-title elementor-heading-title"><?php echo esc_html($settings['widget_title']); ?></h2>
+            <?php endif; ?>
             <div class="tabs">
                 <button class="tab-btn active" data-tab="projects"><?php echo esc_html__('Projects', 'hello-elementor-widgets'); ?></button>
                 <button class="tab-btn" data-tab="gallery"><?php echo esc_html__('Gallery', 'hello-elementor-widgets'); ?></button>
@@ -55,7 +58,6 @@ if (!empty($settings['gallery_posts'])) {
                     </div>
                 <?php endforeach; ?>
             </div>
-            <div class="projects-end-trigger"></div>
         </div>
         
         <!-- Gallery Tab Content -->

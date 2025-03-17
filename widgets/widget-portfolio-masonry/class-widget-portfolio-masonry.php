@@ -98,6 +98,28 @@ class Widget_Portfolio_Masonry extends Widget_Base {
     }
 
     protected function register_controls() {
+        // Add new section for header settings
+        $this->start_controls_section(
+            'section_header',
+            [
+                'label' => esc_html__('Header Settings', 'hello-elementor-widgets'),
+                'tab' => Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+        $this->add_control(
+            'widget_title',
+            [
+                'label' => esc_html__('Title', 'hello-elementor-widgets'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Portfolio Gallery', 'hello-elementor-widgets'),
+                'placeholder' => esc_html__('Enter your title', 'hello-elementor-widgets'),
+                'label_block' => true,
+            ]
+        );
+
+        $this->end_controls_section();
+
         // Projects Tab Section
         $this->start_controls_section(
             'section_projects',
@@ -245,6 +267,104 @@ class Widget_Portfolio_Masonry extends Widget_Base {
             [
                 'name' => 'gallery_item_box_shadow',
                 'selector' => '{{WRAPPER}} .masonry-item',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // Add style section for the title
+        $this->start_controls_section(
+            'section_title_style',
+            [
+                'label' => esc_html__('Title Style', 'hello-elementor-widgets'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_responsive_control(
+            'title_align',
+            [
+                'label' => esc_html__('Alignment', 'hello-elementor-widgets'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => esc_html__('Left', 'hello-elementor-widgets'),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => esc_html__('Center', 'hello-elementor-widgets'),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => esc_html__('Right', 'hello-elementor-widgets'),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                ],
+                'default' => 'left',
+                'selectors' => [
+                    '{{WRAPPER}} .widget-title' => 'text-align: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'title_typography',
+                'label' => esc_html__('Typography', 'hello-elementor-widgets'),
+                'selector' => '{{WRAPPER}} .widget-title',
+            ]
+        );
+
+        $this->add_control(
+            'title_color',
+            [
+                'label' => esc_html__('Color', 'hello-elementor-widgets'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .widget-title' => 'color: {{VALUE}};',
+                ],
+                'default' => '#ffffff',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'title_margin',
+            [
+                'label' => esc_html__('Margin', 'hello-elementor-widgets'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .widget-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'default' => [
+                    'top' => '0',
+                    'right' => '0',
+                    'bottom' => '20',
+                    'left' => '0',
+                    'unit' => 'px',
+                    'isLinked' => false,
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'title_padding',
+            [
+                'label' => esc_html__('Padding', 'hello-elementor-widgets'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .widget-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'default' => [
+                    'top' => '0',
+                    'right' => '20',
+                    'bottom' => '0',
+                    'left' => '20',
+                    'unit' => 'px',
+                    'isLinked' => false,
+                ],
             ]
         );
 

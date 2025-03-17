@@ -3,41 +3,45 @@
     color: #fff;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 0;
+    height: 300vh;
+}
+
+.pin-element {
+    display: block;
+    height: 1px;
+    max-height: 1px;
+    margin: 0;
+    padding: 0;
 }
 
 /* Tab Styles */
 .tabs-container {
     margin-bottom: 30px;
-    position: relative;
+    position: sticky !important;
+    top: 0;
     width: 100%;
+    padding: 100px 0;
 }
 
 .tabs-wrapper {
-    position: sticky;
+    position: sticky !important;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
     padding: 10px 0;
-    border-bottom: 2px solid #333;
     transition: all 0.3s ease;
     width: 100%;
-}
-
-.tabs-wrapper.sticky {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(18, 18, 18, 0.95);
+    min-height: 70px;
 }
 
 .tabs {
     display: flex;
     margin-bottom: 10px;
-    max-width: 1200px;
+    border-bottom: 2px solid #333;
     margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .tab-btn {
@@ -105,19 +109,21 @@
     flex-direction: column;
     padding: 40px 0;
     position: relative;
-    min-height: 100vh;
     width: 100%;
 }
 
 .project-card {
     width: 100%;
     height: 80vh;
-    position: relative;
+    position: sticky;
+    top: 120px;
     border-radius: 24px;
     overflow: hidden;
     margin-bottom: 50px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     transition: box-shadow 0.3s ease;
+    opacity: 1;
+    visibility: visible;
 }
 
 .project-card:hover {
@@ -137,7 +143,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.8;
+    opacity: 1;
     mix-blend-mode: soft-light;
 }
 
@@ -170,6 +176,11 @@
     max-width: 600px;
     margin: 0;
     opacity: 0.8;
+}
+
+.projects-end-trigger {
+    height: 150vh;
+    border-top: 1px solid transparent;
 }
 
 /* Gallery Tab Styles */
@@ -428,4 +439,14 @@
     .swiper-button-prev:after {
         font-size: 16px;
     }
+
+    .widget-title {
+        font-size: 24px;
+        padding: 0 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.widget-title {
+    /* Remove hardcoded styles */
 } 
