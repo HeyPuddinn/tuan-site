@@ -3,7 +3,7 @@ Contributors: HeyPuddinn
 Tags: elementor, widgets, custom widgets
 Requires at least: 5.0
 Tested up to: 6.4
-Stable tag: 1.1.1
+Stable tag: 1.1.51.1.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,10 @@ A collection of custom Elementor widgets including:
 3. Use the widgets in Elementor editor
 
 == Changelog ==
+
+= 1.1.5 =
+* 1.1.5
+
 
 = 1.1.1 =
 * 1.1.1
