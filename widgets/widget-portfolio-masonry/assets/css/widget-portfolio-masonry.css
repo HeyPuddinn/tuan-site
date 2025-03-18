@@ -147,6 +147,10 @@
     mix-blend-mode: soft-light;
 }
 
+.project-img img {
+    height: 100%;
+}
+
 .project-info {
     position: absolute;
     bottom: 0;

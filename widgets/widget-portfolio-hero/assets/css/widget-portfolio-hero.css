@@ -99,10 +99,24 @@
     transform: translateY(0);
 }
 
-@media screen and (min-width: 1700px) {
-  .text-content {
-    margin-top: 5vh;
-  }
+@media screen and (min-width: 1441px) {
+    .portfolio-hero-widget .text-content {
+        display: flex;
+        align-items: center;
+    }
+    .portfolio-hero-widget .portfolio-hero-avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .portfolio-hero-widget .portfolio-text-container {
+        margin-top: 0;
+    }
+
+    .portfolio-hero-widget .portfolio-hero-content {
+        padding-top: 150;
+    }
 }
 
 /* Responsive Design */
