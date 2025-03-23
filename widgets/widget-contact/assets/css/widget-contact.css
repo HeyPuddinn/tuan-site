@@ -1,0 +1,305 @@
+.contact-widget {
+    padding: 50px 0;
+    background: #000000;
+    color: #000;
+}
+
+.contact-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info-column {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+}
+
+.contact-form-column {
+    flex: 2;
+    padding: 20px;
+    background: #fff;
+}
+
+.office-info {
+    margin-bottom: 40px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    color: #000;
+    flex-direction: column;
+}
+
+.info-item i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #000;
+}
+
+.info-content h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.info-content p {
+    margin: 0;
+    font-size: 16px;
+    color: 000;
+}
+
+.social-links h4 {
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #000;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #E5855E;
+}
+
+/* Contact Form 7 Styles */
+.wpcf7-form {
+    max-width: 100%;
+}
+
+.wpcf7-form .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.wpcf7-form .form-field {
+    flex: 1;
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.wpcf7-form .form-field p{
+    margin: 0;
+}
+
+/* Input Styles */
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form textarea {
+    width: 100%;
+    padding: 15px 40px;
+    border: 1px solid #000;
+    background: rgba(255, 255, 255, 0.05);
+    color: #000;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form textarea:focus {
+    border-color: #000;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Placeholder Styles */
+.wpcf7-form input::placeholder,
+.wpcf7-form textarea::placeholder {
+    color: #000;
+}
+
+/* Input Icons */
+.form-field::before {
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 16px;
+    z-index: 1;
+}
+
+.subject-field,
+.message-field{
+    margin-bottom: 20px;
+}
+
+.form-field.name-field::before {
+    content: "\f007"; /* User icon */
+}
+
+.form-field.email-field::before {
+    content: "\f0e0"; /* Email icon */
+}
+
+.form-field.subject-field::before {
+    content: "\f0a1"; /* Bullhorn icon */
+}
+
+.form-field.message-field::before {
+    content: "\f075"; /* Comment icon */
+    top: 25px;
+}
+
+/* Textarea Styles */
+.wpcf7-form textarea {
+    height: 150px;
+    resize: vertical;
+    padding-top: 15px;
+}
+
+/* Submit Button */
+.wpcf7-form .submit-button-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.wpcf7-form input[type="submit"] {
+    background: #E5855E;
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    padding-right: 50px;
+}
+
+.wpcf7-form .submit-button-wrapper::after {
+    content: "\f1d8"; /* Paper plane icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+    background: #d67348;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .contact-info-column,
+    .contact-form-column {
+        flex: 1;
+    }
+    
+    .wpcf7-form .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+} 
+
+/* Input Icons */
+.form-field::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; /* This is crucial for solid icons */
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 16px;
+    z-index: 1;
+}
+
+.form-field.name-field::before {
+    content: "\f007"; /* User icon */
+    font-weight: 900;
+}
+
+.form-field.email-field::before {
+    content: "\f0e0"; /* Email icon */
+    font-weight: 900;
+}
+
+.form-field.subject-field::before {
+    content: "\f0a1"; /* Bullhorn icon */
+    font-weight: 900;
+}
+
+.form-field.message-field::before {
+    content: "\f075"; /* Comment icon */
+    top: 25px;
+    font-weight: 900;
+}
+
+/* Submit Button */
+.wpcf7-form .submit-button-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.wpcf7-form input[type="submit"] {
+    background: #000;
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    padding-right: 50px;
+}
+
+.wpcf7-form .submit-button-wrapper::after {
+    content: "\f1d8"; /* Paper plane icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+}
+
+/* Social Icons */
+.social-icons a i {
+    font-weight: 400; /* For brand icons */
+}
+
+.social-icons a i.fab.fa-facebook-f {
+    font-family: "Font Awesome 5 Brands";
+}
+
+.social-icons a i.fab.fa-twitter {
+    font-family: "Font Awesome 5 Brands";
+}
+
+.social-icons a i.fab.fa-linkedin-in {
+    font-family: "Font Awesome 5 Brands";
+}
+
+.social-icons a i.fab.fa-github {
+    font-family: "Font Awesome 5 Brands";
+} 
