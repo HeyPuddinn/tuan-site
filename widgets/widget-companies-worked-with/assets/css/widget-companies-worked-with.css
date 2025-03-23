@@ -1,0 +1,77 @@
+.companies-widget {
+    width: 100%;
+    overflow: hidden;
+}
+
+.companies-container {
+    width: 100%;
+    background-color: #000000;
+    padding: 20px;
+}
+
+.companies-title h2 {
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.companies-logos {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scroll-logos 20s linear infinite;
+}
+
+.company-logo {
+    text-align: center;
+    padding: 15px;
+    margin-right: 30px;
+}
+
+.company-logo img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+}
+
+.company-logo:hover img {
+    opacity: 1;
+}
+
+.companies-logos-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .company-logo img {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 767px) {
+    .company-logo img {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-logo img {
+        max-width: 80px;
+    }
+}

@@ -6,6 +6,10 @@
   transition: box-shadow 0.3s ease !important;
 }
 
+.page {
+  background-color: #000002 !important;
+}
+
 /* Thêm một chút padding và background để tạo cảm giác phân tách tốt hơn */
 .custom-widget-section {
   background-color: rgba(30, 30, 30, 0.5);

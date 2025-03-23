@@ -1,0 +1,160 @@
+.hero-banner-widget {
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px 0;
+    height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-banner-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 62px;
+    width: 100%;
+}
+
+.hero-banner-avatar {
+    flex: 0 0 auto;
+}
+
+.hero-banner-avatar img {
+    width: 415px;
+    height: 430px;
+    object-fit: cover;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #C78140;
+    border-radius: 10px;
+    display: block;
+    object-position: top;
+}
+
+.hero-banner-content-wrapper {
+    flex: 1 1 auto;
+}
+
+.hero-banner-name {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.hero-banner-job-titles {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #C78140;
+    margin-bottom: 35px;
+    padding-top: 16px;
+    border-top: 3px solid #fff;
+}
+
+.hero-banner-content {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-bottom: 70px;
+}
+
+.hero-banner-button a {
+    display: inline-block;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid #C78140;
+    text-decoration: none;
+}
+
+.hero-banner-button a:hover {
+    background-color: #C78140;
+    color: #ffffff;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .hero-banner-container {
+        gap: 30px;
+    }
+
+    .hero-banner-widget {
+        height: 100%;
+        padding: 0;
+    }
+
+    .hero-banner-avatar {
+        margin-inline: auto;
+    }
+    
+    .hero-banner-avatar img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    .hero-banner-name {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-banner-job-titles {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-banner-content {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .hero-banner-content-wrapper {
+        width: 100%;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+    .hero-banner-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .hero-banner-widget {
+        height: 100%;
+        padding: 0;
+    }
+    
+    .hero-banner-avatar {
+        margin-bottom: 20px;
+    }
+    
+    .hero-banner-avatar img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    .hero-banner-name {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-banner-job-titles {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-banner-content {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+} 
