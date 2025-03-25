@@ -68,6 +68,16 @@ class Widgets_Manager {
             true
         );
 
+        // Register custom.js
+        wp_register_script(
+            'hello-elementor-custom',
+            plugins_url('assets/js/custom.js', HELLO_ELEMENTOR_WIDGETS_FILE),
+            ['jquery'],
+            HELLO_ELEMENTOR_WIDGETS_VERSION,
+            true
+        );
+        wp_enqueue_script('hello-elementor-custom');
+
         // Auto register all widget scripts
         $widget_directories = glob(HELLO_ELEMENTOR_WIDGETS_PATH . 'widgets/*', GLOB_ONLYDIR);
         foreach ($widget_directories as $widget_dir) {

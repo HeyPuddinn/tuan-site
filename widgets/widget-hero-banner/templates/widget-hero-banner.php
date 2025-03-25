@@ -7,6 +7,11 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
         <?php if (!empty($settings['avatar']['url'])): ?>
             <div class="hero-banner-avatar">
                 <img src="<?php echo esc_url($settings['avatar']['url']); ?>" alt="<?php echo esc_attr($settings['name']); ?>">
+                <div class="glitch__layers">
+                    <div class="glitch__layer"></div>
+                    <div class="glitch__layer"></div>
+                    <div class="glitch__layer"></div>
+                </div>
             </div>
         <?php endif; ?>
         

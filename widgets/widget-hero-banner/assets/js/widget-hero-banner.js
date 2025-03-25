@@ -4,6 +4,19 @@
 (function($) {
     'use strict';
 
+    // Function to set glitch image from avatar
+    var setGlitchImage = function() {
+        var avatarImg = $('.hero-banner-avatar img');
+        var glitchLayers = $('.glitch__layer');
+        
+        if (avatarImg.length && glitchLayers.length) {
+            var imgSrc = avatarImg.attr('src');
+            glitchLayers.each(function() {
+                $(this).css('background-image', 'url(' + imgSrc + ')');
+            });
+        }
+    };
+
     // Initialize hero banner widget functionality
     var initHeroBanner = function() {
         $('.hero-banner-button a').on('click', function(e) {
@@ -12,6 +25,9 @@
                 ga('send', 'event', 'Download', 'CV', 'Hero Banner CV Download');
             }
         });
+
+        // Set glitch image
+        setGlitchImage();
     };
 
     // Initialize on document ready

@@ -15,7 +15,6 @@
     width: 100%;
     max-width: 1200px;
     margin-inline: auto;
-    padding: 0 20px;
 }
 
 .portfolio-title {
@@ -166,7 +165,6 @@
     }
     
     .portfolio-slider-navigation {
-        flex-direction: column;
         gap: 20px;
     }
     
