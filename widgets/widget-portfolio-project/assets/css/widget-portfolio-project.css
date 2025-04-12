@@ -1,0 +1,234 @@
+.portfolio-project-widget {
+    padding: 30px 0;
+    color: #ffffff;
+}
+
+.portfolio-project-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.portfolio-project-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.portfolio-project-description {
+    font-size: 16px;
+    color: #cccccc;
+    margin-bottom: 0;
+}
+
+.portfolio-project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.portfolio-project-filter-button {
+    padding: 0px 20px;
+    background-color: transparent;
+    color: #cccccc;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    border-radius: 4px;
+    border-right: 1px solid #cccccc;
+}
+
+.portfolio-project-filter-button:last-child {
+    border-right: none;
+}
+
+.portfolio-project-filter-button:hover,
+.portfolio-project-filter-button.active {
+    background-color: transparent;
+    color: #F4B183;
+    text-decoration: underline;
+}
+
+.portfolio-project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+@media (max-width: 1024px) {
+    .portfolio-project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio-project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.portfolio-project-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #656565;
+}
+
+.portfolio-project-image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%;
+    overflow: hidden;
+}
+
+.portfolio-project-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 2;
+}
+
+.portfolio-project-item:hover .portfolio-project-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+}
+
+.portfolio-project-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-project-content {
+    padding: 20px;
+    text-align: left;
+    opacity: 0;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 3;
+}
+
+.portfolio-project-item:hover .portfolio-project-content {
+    opacity: 1;
+}
+
+.portfolio-project-title-overlay {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.portfolio-project-type {
+    font-size: 14px;
+    color: #F4B183;
+}
+
+/* Project action buttons (eye and link icons) */
+.portfolio-project-actions {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.portfolio-project-item:hover .portfolio-project-actions {
+    opacity: 1;
+}
+
+.action-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000000;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.action-button i {
+    font-size: 18px;
+}
+
+.action-button:hover {
+    background-color: #F4B183;
+    color: #ffffff;
+}
+
+/* Navigation elements (dots and arrows) */
+.portfolio-project-nav {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.nav-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.portfolio-project-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active, 
+.dot:hover {
+    background-color: #F4B183;
+} 
