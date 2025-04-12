@@ -218,8 +218,8 @@
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .portfolio-group-title {
@@ -246,6 +246,26 @@
     display: flex;
     justify-content: flex-end;
     gap: 15px;
+}
+
+.portfolio-branding {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 5;
+    background-color: rgba(161, 157, 155, 0.9);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-branding .branding-text {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .portfolio-icon-link {

@@ -64,6 +64,29 @@ class Widget_Portfolio_Slider extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'branding_text',
+            [
+                'label' => __('Branding Text', 'hello-elementor'),
+                'type' => Controls_Manager::TEXT,
+                'default' => __('Brand', 'hello-elementor'),
+                'label_block' => true,
+                'description' => __('Text displayed in the left corner of each portfolio item', 'hello-elementor'),
+            ]
+        );
+
+        $this->add_control(
+            'show_branding',
+            [
+                'label' => __('Show Branding', 'hello-elementor'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Show', 'hello-elementor'),
+                'label_off' => __('Hide', 'hello-elementor'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+            ]
+        );
+
         $repeater = new Repeater();
 
         $repeater->add_control(
@@ -413,6 +436,93 @@ class Widget_Portfolio_Slider extends Widget_Base {
                 'default' => [
                     'unit' => 'px',
                     'size' => 20,
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // Style Section - Branding
+        $this->start_controls_section(
+            'style_branding_section',
+            [
+                'label' => __('Branding Style', 'hello-elementor'),
+                'tab' => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'show_branding' => 'yes',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'branding_background_color',
+            [
+                'label' => __('Background Color', 'hello-elementor'),
+                'type' => Controls_Manager::COLOR,
+                'default' => 'rgba(255, 127, 80, 0.9)',
+                'selectors' => [
+                    '{{WRAPPER}} .portfolio-branding' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'branding_text_color',
+            [
+                'label' => __('Text Color', 'hello-elementor'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .portfolio-branding .branding-text' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'branding_typography',
+                'label' => __('Typography', 'hello-elementor'),
+                'selector' => '{{WRAPPER}} .portfolio-branding .branding-text',
+            ]
+        );
+
+        $this->add_control(
+            'branding_padding',
+            [
+                'label' => __('Padding', 'hello-elementor'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .portfolio-branding' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'default' => [
+                    'top' => 5,
+                    'right' => 10,
+                    'bottom' => 5,
+                    'left' => 10,
+                    'unit' => 'px',
+                    'isLinked' => false,
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'branding_border_radius',
+            [
+                'label' => __('Border Radius', 'hello-elementor'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .portfolio-branding' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'default' => [
+                    'top' => 4,
+                    'right' => 4,
+                    'bottom' => 4,
+                    'left' => 4,
+                    'unit' => 'px',
+                    'isLinked' => true,
                 ],
             ]
         );

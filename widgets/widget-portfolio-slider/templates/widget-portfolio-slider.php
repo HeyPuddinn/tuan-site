@@ -38,6 +38,12 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
                                     <div class="placeholder-image"></div>
                                 <?php endif; ?>
                                 
+                                <?php if (!empty($settings['show_branding']) && $settings['show_branding'] === 'yes') : ?>
+                                <div class="portfolio-branding">
+                                    <span class="branding-text"><?php echo esc_html($settings['branding_text'] ?? 'Brand'); ?></span>
+                                </div>
+                                <?php endif; ?>
+                                
                                 <div class="portfolio-hover-overlay">
                                     <div class="portfolio-content">
                                         <div class="portfolio-group-title">

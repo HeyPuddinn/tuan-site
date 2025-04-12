@@ -6,6 +6,7 @@
 
 .contact-container {
     display: flex;
+    flex-direction: row-reverse;
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -20,33 +21,29 @@
 
 .contact-form-column {
     flex: 2;
-    border: 1px solid #353638;
-    padding: 20px;
     background: #000;
-}
-
-.office-info {
-    margin-bottom: 40px;
 }
 
 .info-item {
     display: flex;
     align-items: flex-start;
     color: #fff;
-    flex-direction: column;
 }
 
-.info-item:nth-child(2) {
+.info-item {
     padding: 15px 0;
-    margin: 15px 0;
-    border-top: 1px solid #fff;
+    margin: 0 15px;
     border-bottom: 1px solid #fff;
+}
+
+.info-item:last-child {
+    border-bottom: none;
 }
 
 .info-item i {
     font-size: 24px;
     margin-right: 15px;
-    color: #fff;
+    color: #FFB380;
 }
 
 .info-content h4 {
@@ -111,7 +108,7 @@
 .wpcf7-form input[type="email"],
 .wpcf7-form textarea {
     width: 100%;
-    padding: 15px 40px;
+    padding: 15px 25px;
     border: 1px solid #000;
     background: rgba(255, 255, 255, 0.05);
     color: #fff;
@@ -151,23 +148,6 @@
     margin-bottom: 20px;
 }
 
-.form-field.name-field::before {
-    content: "\f007"; /* User icon */
-}
-
-.form-field.email-field::before {
-    content: "\f0e0"; /* Email icon */
-}
-
-.form-field.subject-field::before {
-    content: "\f0a1"; /* Bullhorn icon */
-}
-
-.form-field.message-field::before {
-    content: "\f075"; /* Comment icon */
-    top: 25px;
-}
-
 /* Textarea Styles */
 .wpcf7-form textarea {
     height: 150px;
@@ -181,10 +161,14 @@
     display: inline-block;
 }
 
+.wpcf7-form .submit-button-wrapper p{
+    margin-bottom: 0;
+}
+
 .wpcf7-form input[type="submit"] {
     background: #E5855E;
     color: #fff;
-    padding: 15px 40px;
+    padding: 15px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -192,17 +176,6 @@
     font-weight: 500;
     transition: background-color 0.3s ease;
     padding-right: 50px;
-}
-
-.wpcf7-form .submit-button-wrapper::after {
-    content: "\f1d8"; /* Paper plane icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
 }
 
 .wpcf7-form input[type="submit"]:hover {
@@ -240,37 +213,17 @@
     z-index: 1;
 }
 
-.form-field.name-field::before {
-    content: "\f007"; /* User icon */
-    font-weight: 900;
-}
-
-.form-field.email-field::before {
-    content: "\f0e0"; /* Email icon */
-    font-weight: 900;
-}
-
-.form-field.subject-field::before {
-    content: "\f0a1"; /* Bullhorn icon */
-    font-weight: 900;
-}
-
-.form-field.message-field::before {
-    content: "\f075"; /* Comment icon */
-    top: 25px;
-    font-weight: 900;
-}
-
 /* Submit Button */
 .wpcf7-form .submit-button-wrapper {
     position: relative;
     display: inline-block;
+    width: 100%;
 }
 
 .wpcf7-form input[type="submit"] {
     background: #222427;
     color: #fff;
-    padding: 15px 40px;
+    padding: 15px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -278,17 +231,8 @@
     font-weight: 500;
     transition: background-color 0.3s ease;
     padding-right: 50px;
-}
-
-.wpcf7-form .submit-button-wrapper::after {
-    content: "\f1d8"; /* Paper plane icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
+    width: 100%;
+    text-transform: capitalize;
 }
 
 /* Social Icons */

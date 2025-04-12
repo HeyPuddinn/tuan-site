@@ -304,48 +304,30 @@ class Widget_Contact extends Widget_Base {
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="info-content">
-                                <h4>OUR OFFICE:</h4>
+                                <h4>Address:</h4>
                                 <p><?php echo esc_html($settings['office_address']); ?></p>
                             </div>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-phone"></i>
                             <div class="info-content">
-                                <h4>CONTACT NUMBER:</h4>
+                                <h4>Phone:</h4>
                                 <p><?php echo esc_html($settings['contact_number']); ?></p>
                             </div>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
                             <div class="info-content">
-                                <h4>EMAIL US:</h4>
+                                <h4>Email:</h4>
                                 <p><?php echo esc_html($settings['email_address']); ?></p>
                             </div>
                         </div>
-                    </div>
-                    <div class="social-links">
-                        <h4>SOCIALS</h4>
-                        <div class="social-icons">
-                            <?php if ($settings['facebook_link']['url']) : ?>
-                                <a href="<?php echo esc_url($settings['facebook_link']['url']); ?>" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            <?php endif; ?>
-                            <?php if ($settings['twitter_link']['url']) : ?>
-                                <a href="<?php echo esc_url($settings['twitter_link']['url']); ?>" target="_blank">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            <?php endif; ?>
-                            <?php if ($settings['linkedin_link']['url']) : ?>
-                                <a href="<?php echo esc_url($settings['linkedin_link']['url']); ?>" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            <?php endif; ?>
-                            <?php if ($settings['github_link']['url']) : ?>
-                                <a href="<?php echo esc_url($settings['github_link']['url']); ?>" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            <?php endif; ?>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info-content">
+                                <h4>Working Hours:</h4>
+                                <p>Mon to Sat 9:00 am to 5:00 pm</p>
+                            </div>
                         </div>
                     </div>
                 </div>
