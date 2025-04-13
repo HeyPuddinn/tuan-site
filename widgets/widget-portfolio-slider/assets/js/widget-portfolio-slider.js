@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
             const swiper = new Swiper($sliderContainer[0], {
                 slidesPerView: 1,
                 spaceBetween: 20,
-                loop: false,
+                loop: true,
                 grabCursor: true,
                 speed: 800,
                 effect: 'slide',

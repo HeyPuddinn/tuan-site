@@ -28,11 +28,11 @@ class Widget_Portfolio_Project extends Widget_Base {
     }
 
     public function get_script_depends() {
-        return ['widget-portfolio-project-script'];
+        return ['elementor-swiper', 'widget-portfolio-project-script'];
     }
 
     public function get_style_depends() {
-        return ['widget-portfolio-project-style'];
+        return ['elementor-swiper', 'widget-portfolio-project-style'];
     }
 
     protected function register_controls() {
@@ -62,6 +62,29 @@ class Widget_Portfolio_Project extends Widget_Base {
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'hello-elementor'),
                 'label_block' => true,
+            ]
+        );
+
+        $this->add_control(
+            'branding_text',
+            [
+                'label' => __('Branding Text', 'hello-elementor'),
+                'type' => Controls_Manager::TEXT,
+                'default' => __('Brand', 'hello-elementor'),
+                'label_block' => true,
+                'description' => __('Text displayed in the left corner of each portfolio item', 'hello-elementor'),
+            ]
+        );
+
+        $this->add_control(
+            'show_branding',
+            [
+                'label' => __('Show Branding', 'hello-elementor'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Show', 'hello-elementor'),
+                'label_off' => __('Hide', 'hello-elementor'),
+                'return_value' => 'yes',
+                'default' => 'yes',
             ]
         );
 
@@ -197,6 +220,22 @@ class Widget_Portfolio_Project extends Widget_Base {
         );
 
         $project_repeater->add_control(
+            'media_type',
+            [
+                'label' => __('Media Type', 'hello-elementor'),
+                'type' => Controls_Manager::SELECT,
+                'default' => 'image',
+                'options' => [
+                    'image' => __('Image', 'hello-elementor'),
+                    'youtube' => __('YouTube Video', 'hello-elementor'),
+                    'vimeo' => __('Vimeo Video', 'hello-elementor'),
+                    'mp4' => __('MP4 Video', 'hello-elementor'),
+                ],
+                'label_block' => true,
+            ]
+        );
+
+        $project_repeater->add_control(
             'project_image',
             [
                 'label' => __('Project Image', 'hello-elementor'),
@@ -204,9 +243,56 @@ class Widget_Portfolio_Project extends Widget_Base {
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
+                'condition' => [
+                    'media_type' => 'image',
+                ],
             ]
         );
 
+        $project_repeater->add_control(
+            'youtube_url',
+            [
+                'label' => __('YouTube URL', 'hello-elementor'),
+                'type' => Controls_Manager::TEXT,
+                'placeholder' => __('https://www.youtube.com/watch?v=XXXXXXXXX', 'hello-elementor'),
+                'default' => '',
+                'label_block' => true,
+                'condition' => [
+                    'media_type' => 'youtube',
+                ],
+            ]
+        );
+
+        $project_repeater->add_control(
+            'vimeo_url',
+            [
+                'label' => __('Vimeo URL', 'hello-elementor'),
+                'type' => Controls_Manager::TEXT,
+                'placeholder' => __('https://vimeo.com/XXXXXXXXX', 'hello-elementor'),
+                'default' => '',
+                'label_block' => true,
+                'condition' => [
+                    'media_type' => 'vimeo',
+                ],
+            ]
+        );
+
+        $project_repeater->add_control(
+            'mp4_url',
+            [
+                'label' => __('MP4 Video URL', 'hello-elementor'),
+                'type' => Controls_Manager::MEDIA,
+                'media_type' => 'video',
+                'default' => [
+                    'url' => '',
+                ],
+                'description' => __('Upload or select MP4 video file', 'hello-elementor'),
+                'condition' => [
+                    'media_type' => 'mp4',
+                ],
+            ]
+        );
+        
         $project_repeater->add_control(
             'show_navigation',
             [
@@ -853,10 +939,153 @@ class Widget_Portfolio_Project extends Widget_Base {
         );
 
         $this->end_controls_section();
+
+        // Style Section - Branding
+        $this->start_controls_section(
+            'style_branding_section',
+            [
+                'label' => __('Branding Style', 'hello-elementor'),
+                'tab' => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'show_branding' => 'yes',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'branding_background_color',
+            [
+                'label' => __('Background Color', 'hello-elementor'),
+                'type' => Controls_Manager::COLOR,
+                'default' => 'rgba(255, 127, 80, 0.9)',
+                'selectors' => [
+                    '{{WRAPPER}} .portfolio-branding' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'branding_text_color',
+            [
+                'label' => __('Text Color', 'hello-elementor'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .portfolio-branding .branding-text' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'branding_typography',
+                'label' => __('Typography', 'hello-elementor'),
+                'selector' => '{{WRAPPER}} .portfolio-branding .branding-text',
+            ]
+        );
+
+        $this->add_control(
+            'branding_padding',
+            [
+                'label' => __('Padding', 'hello-elementor'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .portfolio-branding' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'default' => [
+                    'top' => 5,
+                    'right' => 10,
+                    'bottom' => 5,
+                    'left' => 10,
+                    'unit' => 'px',
+                    'isLinked' => false,
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'branding_border_radius',
+            [
+                'label' => __('Border Radius', 'hello-elementor'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .portfolio-branding' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'default' => [
+                    'top' => 4,
+                    'right' => 4,
+                    'bottom' => 4,
+                    'left' => 4,
+                    'unit' => 'px',
+                    'isLinked' => true,
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
     }
 
     protected function render() {
         $settings = $this->get_settings_for_display();
         include HELLO_ELEMENTOR_WIDGETS_PATH . 'widgets/widget-portfolio-project/templates/widget-portfolio-project.php';
+    }
+    
+    /**
+     * Extract YouTube video ID from URL
+     *
+     * @param string $url YouTube URL
+     * @return string YouTube video ID or empty string if not found
+     */
+    protected function get_youtube_id($url) {
+        // Return empty if URL is empty
+        if (empty($url)) {
+            return '';
+        }
+        
+        $video_id = '';
+        
+        // Match youtube.com URLs
+        if (preg_match('/youtube\.com\/watch\?v=([^\&\?\/]+)/', $url, $id)) {
+            $video_id = $id[1];
+        } 
+        // Match youtu.be URLs
+        elseif (preg_match('/youtu\.be\/([^\&\?\/]+)/', $url, $id)) {
+            $video_id = $id[1];
+        }
+        // Match youtube.com/embed URLs
+        elseif (preg_match('/youtube\.com\/embed\/([^\&\?\/]+)/', $url, $id)) {
+            $video_id = $id[1];
+        }
+        
+        return $video_id;
+    }
+    
+    /**
+     * Extract Vimeo video ID from URL
+     *
+     * @param string $url Vimeo URL
+     * @return string Vimeo video ID or empty string if not found
+     */
+    protected function get_vimeo_id($url) {
+        // Return empty if URL is empty
+        if (empty($url)) {
+            return '';
+        }
+        
+        $video_id = '';
+        
+        // Match vimeo.com URLs
+        if (preg_match('/vimeo\.com\/([0-9]+)/', $url, $id)) {
+            $video_id = $id[1];
+        }
+        // Match player.vimeo.com URLs
+        elseif (preg_match('/player\.vimeo\.com\/video\/([0-9]+)/', $url, $id)) {
+            $video_id = $id[1];
+        }
+        
+        return $video_id;
     }
 } 

@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Hello Elementor Widgets
  * Description: Custom widgets for Elementor
- * Version: 1.1.10
- * Author: Your Name
+ * Version: 1.1.12
+ * Author: Ethan
  * Text Domain: hello-elementor-widgets
  */
 

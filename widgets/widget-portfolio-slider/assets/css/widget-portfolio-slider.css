@@ -141,7 +141,7 @@
 
 /* Fix for Swiper slides */
 .swiper-container.portfolio-slider .swiper-slide {
-    height: 400px;
+    height: 300px;
 }
 
 /* Responsive adjustments */
@@ -290,3 +290,9 @@
     width: 20px;
     height: 20px;
 } 
+
+@media screen and (min-width: 992px) {
+    .swiper-container.portfolio-slider .swiper-slide {
+        height: 400px;
+    }
+}
